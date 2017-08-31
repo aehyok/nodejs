@@ -1,0 +1,19 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "This is for study nodejs project !",
+  "homepage": "http://aehyok.com",
+  "author": {
+    "name": "aehyok",
+    "email": "aehyok@vip.qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strongloop/express.git"
+  },
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
