@@ -14,23 +14,23 @@ titlesArray=[];
 
 //200个页面地址
 for(var i=1 ; i<= 2 ; i++){
-    pageUrls.push('http://www.cnblogs.com/#p'+i);
+    pageUrls.push('http://www.cnblogs.com/?CategoryId=808&CategoryType=%22SiteHome%22&ItemListActionName=%22PostList%22&PageIndex='+ i +'&ParentCategoryId=0');
 }
 
 function start(){
     function onRequest(req, res){
         console.log("1————————Debugger");
 
-        ep.after('blogtitle',pageUrls.length*4,function(title){
+        ep.after('blogtitle',2*2,function(title){
             titlesArray.forEach(function(item){
                 res.write(item+"</br>");
             });
         });      
 
-        ep.after('BlogArticleHtml',pageUrls.length*4,function(articleUrls){
+        ep.after('BlogArticleHtml',2*2,function(articleUrls){
             // 当所有 'BlogArticleHtml' 事件完成后的回调触发下面事件
             res.write("BlogArticleHtml"+"</br>");
-            res.write("Blog++++"+urlsArray.length.toString());
+            res.write("Blog++++</br>"+urlsArray.length.toString());
             urlsArray.forEach(function(str) {
                 res.write(str+"</br>");
             }, this);
@@ -56,6 +56,7 @@ function start(){
             superagent.get(pageUrl)
                 .end(function(err,pres){
                         //常规的错误处理
+                        res.write(pageUrl);
                     if (err) {
                         console.log(err);
                         return;
@@ -66,7 +67,7 @@ function start(){
                     var $ = cheerio.load(pres.text);
                     var curPageUrls = $('.titlelnk');
 
-                    for(var i = 0 ; i < 4 ; i++){
+                    for(var i = 0 ; i < curPageUrls.length ; i++){
                         var articleUrl = curPageUrls.eq(i).attr('href');
                         urlsArray.push(articleUrl);
                         //res.write(articleUrl+"</br>");
