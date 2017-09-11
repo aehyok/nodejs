@@ -13,7 +13,7 @@ pageNum = 200,  //要爬取文章的页数
 titlesArray=[];
 
 //200个页面地址
-for(var i=1 ; i<= 2 ; i++){
+for(var i=1 ; i<= 200 ; i++){
     pageUrls.push('http://www.cnblogs.com/?CategoryId=808&CategoryType=%22SiteHome%22&ItemListActionName=%22PostList%22&PageIndex='+ i +'&ParentCategoryId=0');
 }
 
@@ -21,13 +21,13 @@ function start(){
     function onRequest(req, res){
         console.log("1————————Debugger");
 
-        ep.after('blogtitle',2*2,function(title){
+        ep.after('blogtitle',200*20,function(title){
             titlesArray.forEach(function(item){
                 res.write(item+"</br>");
             });
         });      
 
-        ep.after('BlogArticleHtml',2*2,function(articleUrls){
+        ep.after('BlogArticleHtml',200*20,function(articleUrls){
             // 当所有 'BlogArticleHtml' 事件完成后的回调触发下面事件
             res.write("BlogArticleHtml"+"</br>");
             res.write("Blog++++</br>"+urlsArray.length.toString());
