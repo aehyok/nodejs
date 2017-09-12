@@ -18,6 +18,8 @@ app.get("/list",function(req,res){
       request(options,function(error, response, body) {
         if (!error && response.statusCode == 200) {
                 res.write(body);
+                var json=JSON.parse(body);
+                var list=json.data;
         };
       });
 })
