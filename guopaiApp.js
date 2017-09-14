@@ -38,8 +38,6 @@ function errorCallBack(error) {
     }
 }
 
-
-
 app.get('/', function(req, res) {
     var options = {
         url: 'http://app.guopai365.com/message/scrollinfo',
