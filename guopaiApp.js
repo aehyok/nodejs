@@ -3,6 +3,9 @@ var app = express();
 var request = require('request');
 var cheerio = require('cheerio');
 
+var product = require('./models/toBid.js');
+
+//产品list列表 Api
 app.get("/list",function(req,res){
     var fdata={"data":"eyJjdXJyZW50UGFnZSI6IjEiLCJwZXJQYWdlIjoiMjAifQ=="}
     var options = {
@@ -19,10 +22,22 @@ app.get("/list",function(req,res){
         if (!error && response.statusCode == 200) {
                 res.write(body);
                 var json=JSON.parse(body);
-                var list=json.data;
+                var list=json.data.toBid;
+                list.forEach(function(element) {
+                    product.save(element,errorCallBack);  //写入MongoDB,errorCallBack回调函数
+                }, this);
         };
       });
 })
+
+function errorCallBack(error) {
+    if(error) {
+        console.log(error);
+    } else {
+        console.log('saved OK!');
+    }
+}
+
 
 
 app.get('/', function(req, res) {
