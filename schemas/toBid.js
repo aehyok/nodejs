@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
+//定义Schema模型
 var BidSchema = new Schema({
     pid:Number,
     gid:Number,
@@ -13,6 +14,7 @@ var BidSchema = new Schema({
     insert_date: { type: Date, default: Date.now }
 });
 
+//唯一索引
 BidSchema.index({ pid: 1 }, { unique: true });
 
 mongoose.model('BidProduct', BidSchema);
