@@ -8,6 +8,6 @@
 // var server=require("./asyncTest");
 
 //测试request 模块获取JSon数据
-var server=require("./guopaiApp")
+var server=require("./qiniu")
 
 // var server=require('./api-v1');
