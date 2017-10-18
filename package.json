@@ -21,6 +21,7 @@
     "mongodb": "^2.2.31",
     "mongoose": "^4.11.11",
     "qiniu": "^7.0.9",
+    "qrcode": "^0.9.0",
     "request": "^2.81.0",
     "superagent": "^3.6.0",
     "superagent-charset": "^1.2.0"

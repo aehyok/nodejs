@@ -8,6 +8,9 @@
 // var server=require("./asyncTest");
 
 //测试request 模块获取JSon数据
-var server=require("./qiniu")
+//var server=require("./qiniu")
+
+//生成二维码测试
+var server=require("./qrCode")
 
 // var server=require('./api-v1');
