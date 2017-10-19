@@ -11,6 +11,8 @@
 //var server=require("./qiniu")
 
 //生成二维码测试
-var server=require("./qrCode")
+//var server=require("./qrCode")
 
+
+var server=require('./promise')
 // var server=require('./api-v1');
