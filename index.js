@@ -20,3 +20,6 @@
 
 //koa 入口  20171020
 var server=require('./koa');
+
+//koa 示例 20171020
+var server=require('./app');
