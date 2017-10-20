@@ -14,5 +14,9 @@
 //var server=require("./qrCode")
 
 
-var server=require('./promise')
+//var server=require('./promise')
+
 // var server=require('./api-v1');
+
+//koa 入口  20171020
+var server=require('./koa');
