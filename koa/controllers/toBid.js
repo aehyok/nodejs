@@ -12,21 +12,42 @@ exports.save = function(data, callback) {
 };
 
 exports.findAll=function(data,callback){
-  var result= model.find({},function(error,docs)
-{
-    var log=error;
-});
+    var result= model.find({},function(error,docs)
+    {
+        if(!error)
+        {
+          return docs;
+        }
+    });
 }
 
-// exports.findAll = async () => {
-// 	var query = new toBid().find({});
-// 	var res = []
-// 	await query.exec(function(err, data) {
-// 		if(err) {
-// 			res = []
-// 		}else {
-// 			res = data;
-// 		}
-// 	})
-// 	return res
-// }
+//NodeJs升级 async和await的使用
+exports.find = async (context, next) => {
+  var query = model.find({});
+	var res = []
+	await query.exec(function(err, data) {
+		if(err) {
+			res = []
+		}else {
+      res = data;
+    }
+    context.body = {
+      success: true,
+      res
+    }
+	})
+}
+
+
+exports.findss = async () => {
+	var query = model.find({});
+	var res = []
+	await query.exec(function(err, data) {
+		if(err) {
+			res = []
+		}else {
+			res = data;
+		}
+	})
+	return res;
+}

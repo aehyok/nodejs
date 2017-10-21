@@ -9,6 +9,7 @@ module.exports = function(){
   })
 
   router.get('/toBid',User.findAll)
+  router.get('/toa',User.find)
   // user
 //   router.post('/u/signup', App.hasBody, User.signup)
 //   router.post('/u/update', App.hasBody, App.hasToken, User.update)
