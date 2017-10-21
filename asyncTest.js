@@ -1,6 +1,3 @@
-/**
- * Created by tgxh on 2017/7/4.
- */
 const cheerio = require('cheerio')
 const express = require('express')
 const app = express()

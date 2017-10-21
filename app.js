@@ -76,9 +76,26 @@ app.keys = ['zhangivon']
  */
 const router = require('./config/router')()
 
+app.use(async (ctx, next) => {
+  const start = Date.now();
+  await next();
+  const ms = Date.now() - start;
+  console.log(`first ${ctx.method} ${ctx.url} - ${ms}ms`);
+});
+
+app.use((ctx, next) => {
+  const start = Date.now();
+  return next().then(() => {
+    const ms = Date.now() - start;
+    console.log(`second ${ctx.method} ${ctx.url} - ${ms}ms`);
+  });
+});
+
 app
   .use(router.routes())
   .use(router.allowedMethods());
+
+
 
 app.listen(3000)
 console.log('app started at port 3000...');
