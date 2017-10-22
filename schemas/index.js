@@ -12,11 +12,11 @@ var promise = mongoose.connect('mongodb://localhost/myapp', {
   });
 
 //如果连接成功会执行error回调
-db.connection.on("error", function (error) {
+mongoose.connection.on("error", function (error) {
     console.log("数据库连接失败：" + error);
 });
 //如果连接成功会执行open回调
-db.connection.on("open", function () {
+mongoose.connection.on("open", function () {
     console.log("数据库连接成功");
 });
 

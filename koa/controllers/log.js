@@ -8,6 +8,13 @@ exports.save = function(data, callback) {
 };
 
 exports.info = async (ctx, next) => {
+  // for(var index=0;index<101;index++)
+  // {
+  //   var logInfo={"id":index+1,"content":"测试content"+index,"createTime":123};
+  //   var result=MongoDB.save("logs",logInfo,function(err,res){
+  //       var data=res;
+  //   });
+  // }
     var logInfo={"id":1,"content":"测试content","createTime":123};
     var result=MongoDB.save("logs",logInfo,function(err,res){
         var data=res;
