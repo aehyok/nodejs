@@ -43,7 +43,8 @@ var walk = function(modelPath) {
     .readdirSync(modelPath)
     .forEach(function(file) {
       var filePath = path.join(modelPath, '/' + file)
-      var stat = fs.statSync(filePath)
+      //var stat = fs.stat(filePath);
+      var stat = fs.statSync(filePath);
 
       if (stat.isFile()) {
         if (/(.*)\.(js|coffee)/.test(file)) {
