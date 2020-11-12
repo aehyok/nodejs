@@ -28,7 +28,7 @@
     "koa-router": "^7.2.1",
     "koa-session": "^5.5.0",
     "mongodb": "^2.2.31",
-    "mongoose": "^4.11.11",
+    "mongoose": "^5.7.5",
     "pomelo-logger": "^0.1.7",
     "qiniu": "^7.0.9",
     "qrcode": "^0.9.0",
