@@ -17,7 +17,7 @@ const routes = [
         //  测试
         method: 'get',
         path: '/c',
-        controller: [test.list]
+        controller: [test.c]
     }
 ];
 

@@ -12,9 +12,3 @@ mongoose.connection.on("open", (err) => {
     console.log('数据库连接成功')
     console.log('操作数据库')
 })
-
-const createRes = user.create({
-    account: 'aehyok',
-    status: 1
-});
-console.log(createRes, 'createRes')

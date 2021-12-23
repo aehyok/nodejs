@@ -1,7 +1,21 @@
-
+const { user } = require('../models/user')
 const list = async ctx => {
     console.log('list1', 'ctx')
-    ctx.body = '路由改造后的结果'
+    const reuslt = ''
+    result = await user.find({ isDelete: false })
+    console.log(result, ' result')
+    ctx.body = result
+}
+
+
+const c = async (ctx, next) => {
+    console.log('ccccc', 'ctx')
+    const createRes = user.create({
+        account: 'aehyok',
+        status: 1
+    });
+    console.log(createRes, 'createRes')
+    ctx.body = "插入成功"
 }
 
 const todo = async (ctx, next) => {
@@ -12,5 +26,6 @@ const todo = async (ctx, next) => {
 
 module.exports = {
     list,
-    todo
+    todo,
+    c
 }
