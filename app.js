@@ -1,7 +1,7 @@
 const Koa = require('koa');
 
 const router = require('./router')
-
+require('./common/mongo')
 const app = new Koa();
 
 const port = '8787'
